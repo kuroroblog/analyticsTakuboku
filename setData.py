@@ -7,6 +7,7 @@ import time
 # 作品詳細ページへアクセスして、html形式で情報を取得する
 def getText(articleId):
     # api接続を頻繁に行うことで障害を与えないためにも一定時間を置きながら、アクセスする。
+    # DOS攻撃とは? : https://www.shadan-kun.com/blog/measure/2160/
     time.sleep(3)
     # 青空文庫APIについて : https://qiita.com/ksato9700/items/626cc82c007ba8337034
     res = requests.get("http://pubserver2.herokuapp.com/api/v0.1/books/" + str(articleId) + "/content?format=html")
@@ -42,6 +43,7 @@ if __name__ == "__main__":
     docList = []
     for articleId in articleIdList:
         title, doc = getText(articleId)
+        # [[title1, doc1]] → [[title1, doc1], [title2, doc2]]
         docList.append([title, doc])
 
     # DataFrame : https://ai-inter1.com/pandas-dataframe_basic/
