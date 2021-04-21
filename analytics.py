@@ -61,7 +61,7 @@ if __name__ == "__main__":
     df = pd.read_csv('./data.csv')
     # 本文をwordAnalyticsの引数として持たせる。
     # 戻り値として[[名詞1, 名詞2, ...], [動詞1, 動詞2, ...], [形容詞1, 形容詞2, ...]]が返ってくるので、それに合うような形式でデータを受け取る。
-    # apply : https://qiita.com/hisato-kawaji/items/0c66969343a196a65cee
+    # apply : https://note.nkmk.me/python-pandas-map-applymap-apply/
     df[["名詞", "動詞", "形容詞"]] = df["本文"].apply(wordAnalytics)
 
     # 2次元に格納される動詞を1次元に変更する。
