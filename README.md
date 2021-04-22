@@ -3,3 +3,4 @@
 
 # 参考記事
 https://kuroro.blog/python/HHChmFl2UEO4WC3buGX6/
+https://kuroro.blog/python/jXaiVddkAddjeuJAYQBN/
